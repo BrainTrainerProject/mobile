@@ -4,8 +4,6 @@
              xmlns:local="clr-namespace:BrainTrainerApp"
              x:Class="BrainTrainerApp.MainPage">
 
-	<Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+	<WebView Source="https://www.google.de" />
 
 </ContentPage>
