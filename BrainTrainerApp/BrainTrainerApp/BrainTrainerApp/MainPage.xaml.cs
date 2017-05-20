@@ -1,4 +1,5 @@
-﻿using Quobject.SocketIoClientDotNet.Client;
+﻿using Plugin.LocalNotifications;
+using Quobject.SocketIoClientDotNet.Client;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -15,6 +16,7 @@ namespace BrainTrainerApp
 		{
 			InitializeComponent();
             ConnectToSocket();
+            //LocalNotification();
 		}
 
         // https://github.com/Quobject/SocketIoClientDotNet/
@@ -29,8 +31,17 @@ namespace BrainTrainerApp
 
             socket.On(Socket.EVENT_MESSAGE, (data) =>
             {
+                LocalNotification();
                 Debug.WriteLine(data);
             });
+        }
+
+        // https://github.com/edsnider/LocalNotificationsPlugin
+        private void LocalNotification()
+        {
+
+            CrossLocalNotifications.Current.Show("title", "body");
+            Debug.WriteLine("Done");
         }
 	}
 }

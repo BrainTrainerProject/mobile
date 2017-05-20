@@ -2,6 +2,7 @@
   "dependencies": {
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
     "SocketIoClientDotNet": "0.9.13",
+    "Xam.Plugins.Notifier": "2.1.0",
     "Xamarin.Forms": "2.3.4.224"
   },
   "frameworks": {
