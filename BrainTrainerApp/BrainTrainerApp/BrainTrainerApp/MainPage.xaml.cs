@@ -22,7 +22,7 @@ namespace BrainTrainerApp
         // https://github.com/Quobject/SocketIoClientDotNet/
         private void ConnectToSocket()
         {
-            var socket = IO.Socket("ws://localhost:8080");
+            var socket = IO.Socket("https://braintrainer.herokuapp.com/");
 
             socket.On(Socket.EVENT_CONNECT, () =>
             {

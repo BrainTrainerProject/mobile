@@ -14,6 +14,7 @@ EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		BrainTrainerApp\BrainTrainerApp\BrainTrainerApp.projitems*{32e6285d-3243-4e8e-bc32-81fe803a579c}*SharedItemsImports = 13
+		BrainTrainerApp\BrainTrainerApp\BrainTrainerApp.projitems*{3b53a025-0aa3-4a9e-8868-b5e6c4e95dc4}*SharedItemsImports = 4
 		BrainTrainerApp\BrainTrainerApp\BrainTrainerApp.projitems*{60d05295-953d-4526-87a9-2d974dd34737}*SharedItemsImports = 4
 		BrainTrainerApp\BrainTrainerApp\BrainTrainerApp.projitems*{a312604f-3b04-4d61-92d6-693d7f3926ef}*SharedItemsImports = 4
 	EndGlobalSection
