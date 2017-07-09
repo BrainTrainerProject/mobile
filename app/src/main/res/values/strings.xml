@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Braintrainer</string>
+    <string name="braintrainerSecureURL">https://braintrainer.herokuapp.com</string>
+    <string name="braintrainerURL">http://braintrainer.herokuapp.com</string>
 </resources>
