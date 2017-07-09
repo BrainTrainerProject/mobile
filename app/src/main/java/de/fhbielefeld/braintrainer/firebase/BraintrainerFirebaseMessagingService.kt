@@ -1,4 +1,4 @@
-package de.fhbielefeld.braintrainer
+package de.fhbielefeld.braintrainer.firebase
 
 import android.util.Log
 import com.google.firebase.messaging.FirebaseMessagingService
@@ -6,8 +6,8 @@ import com.google.firebase.messaging.RemoteMessage
 
 class BraintrainerFirebaseMessagingService : FirebaseMessagingService() {
 
-    private companion object {
-        val TAG = "BtrFirebaseMessaging"
+    companion object {
+        private val TAG = "BtrFirebaseMessaging"
     }
 
     override fun onMessageReceived(remoteMessage: RemoteMessage?) {

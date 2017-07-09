@@ -24,13 +24,13 @@
             </intent-filter>
         </activity>
         <service
-            android:name=".BraintrainerFirebaseInstanceIdService">
+            android:name=".firebase.BraintrainerFirebaseInstanceIdService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
             </intent-filter>
         </service>
         <service
-            android:name=".BraintrainerFirebaseMessagingService"
+            android:name=".firebase.BraintrainerFirebaseMessagingService"
             android:enabled="true"
             android:exported="false">
             <intent-filter>

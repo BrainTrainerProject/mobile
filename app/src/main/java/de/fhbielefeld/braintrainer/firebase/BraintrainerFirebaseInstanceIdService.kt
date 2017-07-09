@@ -1,4 +1,4 @@
-package de.fhbielefeld.braintrainer
+package de.fhbielefeld.braintrainer.firebase
 
 import android.util.Log
 import com.google.firebase.iid.FirebaseInstanceId
@@ -6,8 +6,8 @@ import com.google.firebase.iid.FirebaseInstanceIdService
 
 class BraintrainerFirebaseInstanceIdService : FirebaseInstanceIdService() {
 
-    private companion object {
-        val TAG = "BtrFirebaseIId"
+    companion object {
+        private val TAG = "BtrFirebaseIId"
     }
 
     override fun onTokenRefresh() {
