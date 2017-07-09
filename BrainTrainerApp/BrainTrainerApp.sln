@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.6
+VisualStudioVersion = 15.0.26430.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "BrainTrainerApp", "BrainTrainerApp\BrainTrainerApp\BrainTrainerApp.shproj", "{32E6285D-3243-4E8E-BC32-81FE803A579C}"
 EndProject
@@ -136,7 +136,6 @@ Global
 		{60D05295-953D-4526-87A9-2D974DD34737}.Debug|Any CPU.ActiveCfg = Debug|iPhone
 		{60D05295-953D-4526-87A9-2D974DD34737}.Debug|ARM.ActiveCfg = Debug|iPhone
 		{60D05295-953D-4526-87A9-2D974DD34737}.Debug|iPhone.ActiveCfg = Debug|iPhone
-		{60D05295-953D-4526-87A9-2D974DD34737}.Debug|iPhone.Build.0 = Debug|iPhone
 		{60D05295-953D-4526-87A9-2D974DD34737}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
 		{60D05295-953D-4526-87A9-2D974DD34737}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
 		{60D05295-953D-4526-87A9-2D974DD34737}.Debug|x64.ActiveCfg = Debug|iPhone

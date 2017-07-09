@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "285053289446",
+    "firebase_url": "https://braintrainer-1b724.firebaseio.com",
+    "project_id": "braintrainer-1b724",
+    "storage_bucket": "braintrainer-1b724.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:285053289446:android:c65b69f09d23f9bf",
+        "android_client_info": {
+          "package_name": "de.fhbielefeld.braintrainer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "285053289446-28m4iar92upso356ndjdun819hta20ln.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDihemhFkLf8I68jNzHDHC4GY-5Lkxj_ew"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

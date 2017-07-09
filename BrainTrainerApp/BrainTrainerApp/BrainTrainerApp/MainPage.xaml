@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:BrainTrainerApp"
              x:Class="BrainTrainerApp.MainPage">
 
-    <WebView Source="https://braintrainer.herokuapp.com/" />
+    <WebView Source="https://braintrainer.herokuapp.com" x:Name="WebView" />
 
 </ContentPage>
