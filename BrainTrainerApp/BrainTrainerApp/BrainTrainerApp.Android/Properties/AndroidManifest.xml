@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="de.fh_bielefeld.braintrainer">
-	<uses-sdk android:minSdkVersion="15" />
-	<application android:label="BrainTrainerApp.Android" android:icon="@drawable/braintrainer_mobile_icon">
-		<receiver android:name="localnotifications.plugin.ScheduledAlarmHandler" android:enabled="true"></receiver>
-	</application>
-</manifest>
