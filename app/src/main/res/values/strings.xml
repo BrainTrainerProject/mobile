@@ -2,4 +2,7 @@
     <string name="app_name">Braintrainer</string>
     <string name="braintrainerSecureURL">https://braintrainer.herokuapp.com</string>
     <string name="braintrainerURL">http://braintrainer.herokuapp.com</string>
+    <string name="localhost">http://10.132.162.241:8000/start</string>
+    <string name="debug_url_loaded">URL has been loaded!</string>
+    <string name="Android_JS_Interface">AndroidApp</string>
 </resources>
