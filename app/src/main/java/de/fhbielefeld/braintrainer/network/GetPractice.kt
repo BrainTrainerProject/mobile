@@ -33,20 +33,17 @@ class GetPractice(question: TextView, answer: EditText, next: Button, activity: 
     override fun doInBackground(vararg params: Void?): Boolean {
         while(MainActivity.idToken == null) {
             Thread.sleep(1000)
-            Log.d(TAG, "waiting")
+            // Waiting for PeriodicTask to set idToken in MainActivity
         }
 
         try {
             val practice: Response = client.newCall(createRequest("practice")).execute()
-            val body = practice.body()?.string()
-            Log.d(TAG, body)
-            val jsonArr = JSONArray(body)
+            val jsonArr = JSONArray(practice.body()?.string())
             repeat(jsonArr.length()) { i ->
                 val notecard: Response = client.newCall(createRequest("notecard/${jsonArr[i]}")).execute()
                 val jsonObj = JSONObject(notecard.body()?.string())
                 notecards.add(jsonObj)
             }
-            Log.d(TAG, jsonArr.toString())
         } catch (e: Exception) {
             Log.e(TAG, e.localizedMessage)
             return false
@@ -61,7 +58,6 @@ class GetPractice(question: TextView, answer: EditText, next: Button, activity: 
                 override fun onClick(view: View?) {
                     checkAnswer()
                     if(notecardIndex == notecards.size - 1){
-                        // TODO: Die ergebnise an die API schicken
                         SendEvaluatePractice(notecards, activity.resources.getString(R.string.apiAddress), this@GetPractice).execute()
                     } else {
                         setUI(++notecardIndex)
