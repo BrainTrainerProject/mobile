@@ -1,6 +1,5 @@
 package de.fhbielefeld.braintrainer.firebase
 
-import android.os.AsyncTask
 import android.util.Log
 import com.google.firebase.iid.FirebaseInstanceId
 import com.google.firebase.iid.FirebaseInstanceIdService
@@ -21,7 +20,7 @@ class BraintrainerFirebaseInstanceIdService : FirebaseInstanceIdService() {
 
     private fun sendRegistrationToServer(refreshedToken: String) {
         if(MainActivity.idToken != null) {
-            MainActivity.runAsyncTask(MainActivity.idToken, refreshedToken)
+            FirebaseTokenToServer.runAsyncTask(MainActivity.idToken, refreshedToken)
         }
     }
 }

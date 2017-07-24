@@ -6,6 +6,7 @@ import android.webkit.ValueCallback
 import android.webkit.WebView
 import com.google.firebase.iid.FirebaseInstanceId
 import de.fhbielefeld.braintrainer.MainActivity
+import de.fhbielefeld.braintrainer.network.FirebaseTokenToServer
 
 class PeriodicTask(webview: WebView) : Runnable {
 
@@ -25,12 +26,12 @@ class PeriodicTask(webview: WebView) : Runnable {
             webView.evaluateJavascript("(function() {return localStorage.getItem('${idTokenName}').toString(); })();",
                     object:ValueCallback<String> {
                         override fun onReceiveValue(value: String?) {
-                            Log.d(TAG, "Value returned from JavaScript: $value")
+//                            Log.d(TAG, "Value returned from JavaScript: $value")
                             if(value != null && value != "null") {
                                 val idToken: String = value.substring(value.indexOf("idToken") + 12, value.lastIndexOf("\"") - 3)
                                 queryJS = false
                                 MainActivity.idToken = idToken
-                                MainActivity.runAsyncTask(idToken, FirebaseInstanceId.getInstance().token)
+                                FirebaseTokenToServer.runAsyncTask(idToken, FirebaseInstanceId.getInstance().token)
                             }
                         }
                     })
