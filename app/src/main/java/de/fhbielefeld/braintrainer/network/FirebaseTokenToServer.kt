@@ -32,7 +32,6 @@ class FirebaseTokenToServer : AsyncTask<String, Int, Boolean>() {
 
                 val requestBody: RequestBody = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), jsonObj.toString())
                 val newProfile: Response = client.newCall(createRequest(tokens[0], true, requestBody)).execute()
-                Log.d(TAG, newProfile.body()?.string())
             } catch (e: Exception) {
                 Log.e(TAG, e.localizedMessage)
                 return false
@@ -43,7 +42,7 @@ class FirebaseTokenToServer : AsyncTask<String, Int, Boolean>() {
 
     private fun createRequest(bearer: String?, put: Boolean, requestBody: RequestBody?): Request {
         val request = Request.Builder()
-                .url("http://192.168.178.35:8080/api/profile")
+                .url("https://braintrainer.herokuapp.com/api/profile")
                 .addHeader("Authorization", "Bearer $bearer")
         if(put) {
             request.put(requestBody)

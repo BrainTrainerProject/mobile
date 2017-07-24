@@ -58,7 +58,15 @@ class GetPractice(question: TextView, answer: EditText, next: Button, activity: 
                 override fun onClick(view: View?) {
                     checkAnswer()
                     if(notecardIndex == notecards.size - 1){
-                        SendEvaluatePractice(notecards, activity.resources.getString(R.string.apiAddress), this@GetPractice).execute()
+                        question!!.text = "Du hast ${countCorrect()} von ${notecards.size} korrekt beantwortet"
+                        answer!!.visibility = View.INVISIBLE
+                        view!!.setOnClickListener(object:View.OnClickListener {
+                            override fun onClick(p0: View?) {
+                                SendEvaluatePractice(notecards,
+                                        activity.resources.getString(R.string.apiAddress),
+                                        this@GetPractice).execute()
+                            }
+                        })
                     } else {
                         setUI(++notecardIndex)
                     }
@@ -79,6 +87,18 @@ class GetPractice(question: TextView, answer: EditText, next: Button, activity: 
     private fun checkAnswer() {
         val value: Boolean = notecards[notecardIndex].getString("answer") == answer!!.text.toString()
         notecards[notecardIndex].put("success", value)
+    }
+
+    private fun countCorrect(): Int {
+        var count: Int = 0
+        for(notecard in notecards) {
+            if(notecard.has("success")) {
+                if(notecard.getBoolean("success") == true) {
+                    count++
+                }
+            }
+        }
+        return count
     }
 
     private fun setUI(notecardToSet: Int){

@@ -28,7 +28,6 @@ class SendEvaluatePractice(notecards: ArrayList<JSONObject>, apiAddress: String,
                 jsonObj.put("success", notecards!![i].getBoolean("success"))
                 evaluations.put(jsonObj)
             }
-            Log.d(TAG, evaluations.toString())
             val requestBody: RequestBody = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), evaluations.toString())
             val request: Request = Request.Builder()
                     .url("${apiAddress}practice/evaluate")
