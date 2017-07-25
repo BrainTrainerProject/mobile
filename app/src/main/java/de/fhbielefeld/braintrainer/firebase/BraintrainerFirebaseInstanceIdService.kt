@@ -20,7 +20,7 @@ class BraintrainerFirebaseInstanceIdService : FirebaseInstanceIdService() {
 
     private fun sendRegistrationToServer(refreshedToken: String) {
         if(MainActivity.idToken != null) {
-            FirebaseTokenToServer.runAsyncTask(MainActivity.idToken, refreshedToken)
+            FirebaseTokenToServer().execute(MainActivity.idToken, refreshedToken)
         }
     }
 }

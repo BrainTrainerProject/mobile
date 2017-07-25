@@ -10,15 +10,6 @@ class FirebaseTokenToServer : AsyncTask<String, Int, Boolean>() {
 
     companion object {
         private val TAG: String = "FirebaseTokenToServer"
-        var asyncTask: FirebaseTokenToServer = FirebaseTokenToServer()
-        fun runAsyncTask(idToken: String?, firebaseToken: String?) {
-            if(asyncTask.status == AsyncTask.Status.FINISHED) {
-                asyncTask = FirebaseTokenToServer()
-            }
-            if(asyncTask.status != AsyncTask.Status.RUNNING) {
-                asyncTask.execute(idToken, firebaseToken)
-            }
-        }
     }
 
     private val client: OkHttpClient = OkHttpClient()

@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Braintrainer</string>
-    <string name="braintrainerSecureURL">https://braintrainer.herokuapp.com</string>
-    <string name="braintrainerURL">http://braintrainer.herokuapp.com</string>
-    <string name="apiAddress">https://braintrainer.herokuapp.com/api/</string>
+    <string name="braintrainerSecureURL">https://braintrainer.herokuapp.com/start</string>
+    <string name="braintrainerURL">http://braintrainer.herokuapp.com/start</string>
+    <string name="localhost" >http://192.168.178.21:8000/start</string>
 </resources>
