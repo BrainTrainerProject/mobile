@@ -4,6 +4,7 @@ import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
@@ -41,8 +42,7 @@ class MainActivity : AppCompatActivity() {
                     periodicTask?.run()
                     firePeriodicTask = false
                 }
-
-
+                triggerUebung()
             }
         }
 
@@ -53,16 +53,7 @@ class MainActivity : AppCompatActivity() {
     private fun triggerUebung() {
         if(ueben) {
             Handler().postDelayed({
-                webview?.evaluateJavascript("function eventFire(el, etype){" +
-                        "  if (el.fireEvent) {" +
-                        "    el.fireEvent('on' + etype);" +
-                        "  } else {" +
-                        "    var evObj = document.createEvent('Events');" +
-                        "    evObj.initEvent(etype, true, false);" +
-                        "    el.dispatchEvent(evObj);" +
-                        "  }" +
-                        "}" +
-                        "eventFire(document.querySelector('.random-practice'), 'click')", null)
+                loadPracticeWebsite(webview)
                 ueben = false
             }, 1000)
         }
@@ -75,6 +66,16 @@ class MainActivity : AppCompatActivity() {
             url = getString(R.string.braintrainerSecureURL)
         } else {
             url = getString(R.string.braintrainerURL)
+        }
+        webview?.loadUrl(url)
+    }
+
+    private fun loadPracticeWebsite(webview: WebView?) {
+        val url: String
+        if (Build.VERSION.SDK_INT >= 21) {
+            url = getString(R.string.practiceSecureURL)
+        } else {
+            url = getString(R.string.practiceURL)
         }
         webview?.loadUrl(url)
     }
